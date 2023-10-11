@@ -1,0 +1,35 @@
+/* :root {
+    --cor-fundo: #6A9C89;
+    --cor-primária: #EBE4D1;
+    --cor-secundária: #232D3F;
+    --cor-terciária: #000;
+    --cor-quaternária: #E5C3A6;
+
+}
+
+html {
+    margin: 20px;
+    background-color:var(--cor-fundo);
+}
+
+article{
+    display: flex;
+    justify-content: center;
+}
+
+.container {
+    display:flex;
+    justify-content: center;
+    border-radius: 5px solid var(--cor-terciária);
+    background-color: var(--cor-primária);
+    height: 800px;
+    width: 1000px;
+}
+/*  */
+
+button {
+    display: flex;
+    justify-content: center;
+    height: 100px;
+    width: 100px;
+}
