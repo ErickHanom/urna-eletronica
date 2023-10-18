@@ -17,6 +17,7 @@ function urnaEletronica() {
     let votonulo = 0;
     let encerravot = 'N' && 'n';
     let senhafinal = 123456;
+    let Totaldevotos = 0;
     
 
     do {
@@ -26,8 +27,8 @@ function urnaEletronica() {
             '\n |2| Candidato2:' + nome2 +
             '\n |3| Candidato3:' + nome3 +
             '\n |5| Voto em Branco' +
-            '\n |8| Voto Nulo '+
-            '\n Digite a sua escolha:'));
+            '\n Digite a sua escolha:' +
+            '\n Após escolha dos votos digite sua senha para a contagem:'));
 
         contador++;
         
@@ -51,21 +52,28 @@ function urnaEletronica() {
         }else if (opcao == 5){
     
             console.log('Voto em Branco computado')
-            votobranco++;
-    
-        }else if (opcao == 8){
-    
-            console.log('Voto Nulo computado')
-            votonulo++;
-    
+            votobranco++;   
+            
         }else if ( opcao === senhafinal){
             
-             encerravot = prompt('Deseja realmente encerrar votação?');
-             if (encerravot == 'N' && encerravot == 'n'){  
-             }
+            encerravot = prompt('Deseja realmente encerrar votação?');
+            if (encerravot == 'N' && encerravot == 'n'){  
+            }
+            
+        } else {
         
-    } 
-}while (encerravot !== 'S' && encerravot !== 's');
+            let confirmavotonulo = confirm('VOTO ANULADO');
+
+        if (confirmavotonulo) {
+
+            console.log ('Voto Nulo computado')
+            votonulo++;
+
+        }
+    }
+
+
+        }while (encerravot !== 'S' && encerravot !== 's');
     
 
         contador--;
@@ -78,14 +86,30 @@ function urnaEletronica() {
         console.log('Voto em Branco computado', votobranco);
         console.log('Voto Nulo computado', votonulo);
 
+
+        Totaldevotos = (candidato1 + candidato2 + candidato3 + votobranco + votonulo);
+        console.log ('O Total de votos computados é de:', Totaldevotos)
+
+        console.log('relação de candidatos', nome1, candidato1);
+        console.log('Percentual de votos do Candidato1', ((candidato1 / Totaldevotos * 100).toFixed(2)) + '%');
+        console.log('relação de candidatos', nome2, candidato2);
+        console.log('Percentual de votos do Candidato2', ((candidato2 / Totaldevotos * 100).toFixed(2)) + '%');
+        console.log('relação de candidatos', nome3, candidato3);
+        console.log('Percentual de votos do Candidato3', ((candidato3 / Totaldevotos * 100).toFixed(2)) + '%');
+        console.log('relação de Votos em Branco');
+        console.log('Percentual de votos em branco', ((votobranco / Totaldevotos * 100).toFixed(2)) + '%');
+        console.log('relação de Votos Nulos');
+        console.log('Percentual de votos nulos', ((votonulo / Totaldevotos * 100).toFixed(2)) + '%');
+
         if (candidato1 > candidato2 &&  candidato1 > candidato3) {
-            console.log('O ganhador é o', nome1);
+            console.log('O ganhador é o Candidato 1 -', nome1);
+            console.log('Seus votos em % são de :' )
             console.log('Total de votos válidos e os em Brancos', votobranco + candidato1);
         }else if (candidato2 > candidato3 && candidato2 > candidato1) {
-            console.log('O ganhador é o', nome2);
+            console.log('O ganhador é o Candidato 2 -', nome2);
             console.log('Total de votos válidos e os em Brancos', votobranco + candidato2);
         }else if (candidato3 > candidato2 && candidato3 > candidato1) {
-            console.log('O ganhador é o', nome3);
+            console.log('O ganhador é o Candidato 3 -', nome3);
             console.log('Total de votos válidos e os em Brancos', votobranco + candidato3);
         }else {
             console.log('Empate')
