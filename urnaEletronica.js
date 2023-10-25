@@ -15,18 +15,26 @@ function urnaEletronica() {
     let encerravot = 'N' && 'n';
     let senhafinal = 0;
     let Totaldevotos = 0;
+    let data = new Date();
+    
 
+    function dataFim() {
+         data = new Date();
+         return data;
+    }
+    
     // Inserindo Nomes dos Candidatos
-
+    
     senhafinal = parseInt(prompt('Digite sua senha do Mesário para iniciar: '));
-
+    
+    console.log('Data: ' + dataFim().toLocaleString());
+    
     do {
-        nome1 = prompt('Digite o nome do Candidato1');
+        nome1 = prompt('\n Digite o nome do Candidato1');
         nome2 = prompt('Digite o nome do Candidato2');
         nome3 = prompt('Digite o nome do Candidato3');
 
         // Confirmação dos Candidatos
-
         console.log('** NOMES DOS CANDIDATOS **');
         console.log('Candidato 1: ' + nome1);
         console.log('Candidato 2: ' + nome2);
@@ -171,6 +179,10 @@ function urnaEletronica() {
     }
 
     console.log('Fim do Programa');
+    console.log('Horário de Término da Votação:' + '\n' + dataFim().toLocaleString()
+    )
+
     console.log('--------------------------------------------')
+
 }
 
