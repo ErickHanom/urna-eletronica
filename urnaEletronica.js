@@ -3,65 +3,60 @@ function urnaEletronica() {
     // Declaração das variáveis
 
     let opcao;
-    let nome1;
-    let nome2;
-    let nome3;
     let contador = 0;
+    let candidatos = 0;
     let candidato1 = 0;
     let candidato2 = 0;
     let candidato3 = 0;
+    let candidato4 = 0;
+    let candidato5 = 0;
     let votobranco = 0;
     let votonulo = 0;
     let encerravot = 'N' && 'n';
     let senhafinal = 0;
     let Totaldevotos = 0;
     let data = new Date();
-    
 
     function dataFim() {
-         data = new Date();
-         return data;
+        data = new Date();
+        return data;
     }
-    
+
     // Inserindo Nomes dos Candidatos
-    
+
     senhafinal = parseInt(prompt('Digite sua senha do Mesário para iniciar: '));
     
+        // Página Principal da urna
+
     console.log('Data: ' + dataFim().toLocaleString());
-    
-    do {
-        nome1 = prompt('\n Digite o nome do Candidato1');
-        nome2 = prompt('Digite o nome do Candidato2');
-        nome3 = prompt('Digite o nome do Candidato3');
-
-        // Confirmação dos Candidatos
-        console.log('** NOMES DOS CANDIDATOS **');
-        console.log('Candidato 1: ' + nome1);
-        console.log('Candidato 2: ' + nome2);
-        console.log('Candidato 3: ' + nome3);
-
-    } while (!confirm('Se os nomes dos candidatos estão corretos, clique OK para continuar e CANCELAR para voltar e digitar novamente'));
-
-    // Página Principal da urna
 
     do {
 
-        opcao = parseInt(prompt(
-            '\n |1| Candidato1: ' + nome1 +
-            '\n |2| Candidato2: ' + nome2 +
-            '\n |3| Candidato3: ' + nome3 +
-            '\n |5| Voto em Branco' +
-            '\n Digite a sua escolha:' +
-            '\n Após escolha dos votos digite sua senha para a contagem:'));
+         candidatos = [
+   
+               [11, 'Osvaldo Virgínio', 'PPF'],
+               [12, 'Lula', 'PPCO'],
+               [13, 'Jair Bolsonaro', 'ABD'],
+               [14, 'Dilma Rosseff', 'PT'],
+               [15, 'Nicolas Ferreira', 'PM']
+           ]
+   
+           for (i = 0; i <= candidatos.length; i++) {
+   
+               alert ((` Nº: ${candidatos[i][0]} | Nome do Candidato: ${candidatos[i][1]} | Partido: ${candidatos[i][2]}`));
+           }
+            
+
+        opcao = parseInt(prompt('Digite a sua escolha de voto'));
 
         contador++;
 
         // Votação do Usuário
 
-        if (opcao == 1) {
+        if (opcao == 11) {
 
             if (confirm(
-                '\n Seu voto será computado para o Candidato 1: ' + nome1 +
+                '\n Seu voto será computado para o Candidato 1: ' +
                 '\n Deseja Prosseguir?')) {
 
                 console.log('Voto computado para: ', nome1)
@@ -70,24 +65,44 @@ function urnaEletronica() {
             }
 
 
-        } else if (opcao == 2) {
+        } else if (opcao == 12) {
 
             if (confirm(
-                '\n Seu voto será computado para o Candidato 2: ' + nome2 +
+                '\n Seu voto será computado para o Candidato 2: ' + 
                 '\n Deseja Prosseguir?')) {
 
                 console.log('Voto computado para: ', nome2)
-                candidato1++;
+                candidato2++;
 
             }
-        } else if (opcao == 3) {
+        } else if (opcao == 13) {
 
             if (confirm(
-                '\n Seu voto será computado para o Candidato 3: ' + nome3 +
+                '\n Seu voto será computado para o Candidato 3: ' + 
                 '\n Deseja Prosseguir?')) {
 
                 console.log('Voto computado para: ', nome3)
-                candidato1++;
+                candidato3++;
+
+            }
+        } else if (opcao == 14) {
+
+            if (confirm(
+                '\n Seu voto será computado para o Candidato 4: ' + 
+                '\n Deseja Prosseguir?')) {
+
+                console.log('Voto computado para: ', nome3)
+                candidato4++;
+
+            }
+        } else if (opcao == 15) {
+
+            if (confirm(
+                '\n Seu voto será computado para o Candidato 5: ' +
+                '\n Deseja Prosseguir?')) {
+
+                console.log('Voto computado para: ', nome3)
+                candidato5++;
 
             }
 
