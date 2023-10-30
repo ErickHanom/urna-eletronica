@@ -1,17 +1,24 @@
 
-    let candidatos = [
-    
-        [71, 'Candidato1', 'PPF'],
-        [72, 'Candidato2', 'PPCO'],
-        [73, 'Candidato3', 'ABD'],
-        [74, 'Candidato4', 'PT'],
-        [75, 'Candidato5', 'PM']
-    ]
-    
-    for (i = 0; i <= candidatos.length; i++) {
+// function TesteCandidato() {
 
-        console.log(`Nº: ${candidatos[i][0]} | Nome: ${candidatos [i] [1]} | Partido: ${candidatos [i] [2]}`);
-    }  
+//     let candidatos = [
+    
+//         [71, 'Candidato1', 'PPF'],
+//         [72, 'Candidato2', 'PPCO'],
+//         [73, 'Candidato3', 'ABD'],
+//         [74, 'Candidato4', 'PT'],
+//         [75, 'Candidato5', 'PM']
+//     ]
+    
+//     for (i = 0; i <= candidatos.length; i++) {
+
+//         confirm ((`Nº: ${candidatos[i][0]} | Nome: ${candidatos [i] [1]} | Partido: ${candidatos [i] [2]}`));
+//     }  
+
+//     alert('Funcionuo!!!');
+
+//     console.log (('Nois é Brabo!!!'));
+// }
 
     // nome1 = prompt('\n Digite o nome do Candidato1');
     // nome2 = prompt('Digite o nome do Candidato2');

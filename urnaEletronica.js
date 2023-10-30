@@ -1,7 +1,34 @@
+function verificarIntegridadeUrna() {
+
+    fetch('./urnaEletronica.js')
+    .them(conteudo => {conteudo.text()})
+    .then(conteudo => {CryptoJS.SHA256(conteudo).toString()})
+    .then(hashUrnaAtual => {
+        fetch('./hashVerificado')
+            .then(conteudo => {conteudo.text()})
+            .then(hashVerificado => {
+                if (hashUrnaAtual === hashVerificado) {
+                    console.log('Hash verificado, urna íntegra.')
+                }else {
+                    console.log('HASHES DIFERENTES, URNA ADULTERADA!!!')
+                    console.log(`Hash esperado: ${hashVerificado}`)
+                    console.log(`Hash da urna: ${hashUrnaAtual}`)
+                }
+            })
+    });
+
+}
+
+function dataHoraAtual() {
+    data = new Date();
+    return data;
+}
+
+
 function urnaEletronica() {
-
+    
     // Declaração das variáveis
-
+    
     let opcao;
     let contador = 0;
     let candidatos = 0;
@@ -15,37 +42,34 @@ function urnaEletronica() {
     let encerravot = 'N' && 'n';
     let senhafinal = 0;
     let Totaldevotos = 0;
-    let data = new Date();
+    
 
-    function dataFim() {
-        data = new Date();
-        return data;
-    }
-
+    // console.log('Data:' + dataFim().toLocaleString());
+    
     // Inserindo Nomes dos Candidatos
 
     senhafinal = parseInt(prompt('Digite sua senha do Mesário para iniciar: '));
     
         // Página Principal da urna
 
-    console.log('Data: ' + dataFim().toLocaleString());
 
-    do {
-
-         candidatos = [
-   
-               [11, 'Osvaldo Virgínio', 'PPF'],
-               [12, 'Lula', 'PPCO'],
-               [13, 'Jair Bolsonaro', 'ABD'],
-               [14, 'Dilma Rosseff', 'PT'],
-               [15, 'Nicolas Ferreira', 'PM']
-           ]
-   
-           for (i = 0; i <= candidatos.length; i++) {
-   
-               alert ((` Nº: ${candidatos[i][0]} | Nome do Candidato: ${candidatos[i][1]} | Partido: ${candidatos[i][2]}`));
-           }
+        
+        
+        do {
             
+            candidatos = [
+        
+                  [11, 'Osvaldo Virgínio', 'PPF'],
+                  [12, 'Lula', 'PPCO'],
+                  [13, 'Jair Bolsonaro', 'ABD'],
+                  [14, 'Dilma Rosseff', 'PT'],
+                  [15, 'Nicolas Ferreira', 'PM']
+              ]
+        
+              for (i = 0; i <= candidatos.length; i++) {
+        
+                alert (` Nº: ${candidatos[i][0]} | Nome do Candidato: ${candidatos[i][1]} | Partido: ${candidatos[i][2]}`)
+              }
 
         opcao = parseInt(prompt('Digite a sua escolha de voto'));
 
@@ -192,6 +216,8 @@ function urnaEletronica() {
         console.log('Não houve votação nesta urna');
         console.log('Total de Votos: ' + Totaldevotos);
     }
+
+    verificarIntegridadeUrna();
 
     console.log('Fim do Programa');
     console.log('Horário de Término da Votação:' + '\n' + dataFim().toLocaleString()
