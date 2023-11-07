@@ -9,31 +9,33 @@
     <script src ="./crypto-js.min.js"></script>
 </head>
 <body>
-    
-    <section>
-        <article>
-            
-            <h1>Candidatos:</h1>
-            <h2>11- Osvaldo Virgínio</h2>
-            <h2>12- Lula</h2>
-            <h2>13- Jair Bolsonaro</h2>
-            <h2>14- Dilma Roseff</h2>
-            <h2>15- Nicolas Ferreira</h2>
-            
-            
-            <div>
-                <div class="container"></div>
-            </div>
-            
-        </article>
-    </section>
-    
-    <div></div>
-    
-    <button type="button" onclick ="urnaEletronica()">Iniciar</button>
-    <script type="audio/mpeg"  src="./confirmacao.mp3"></script>
-    <script src="./urnaEletronica.js"></script>
 
+    <div> 
+        <label for="candidato">Candidato:</label>
+        <input type="text" id="candidato">
+    </div>
+
+    <div>
+        <label for="partido">Partido:</label>
+        <input type="text" id="partido">
+    </div>
+
+    <div>
+        <label for="codigo">Código:</label>
+        <input type="text" id="codigo">
+    </div>
+
+    <div>
+        <button type="button" onclick="leituraDados()">Gravar Dados</button>
+        <button type="button" onclick="removeDados()">Remover Dados</button>
+    </div>
+        
+        
+        <div id="tela"></div>
+        
+        <!-- <button type="button" onclick ="urnaEletronica()">Iniciar</button> -->
+        <script type="audio/mpeg"  src="./confirmacao.mp3"></script>
+        <script src="./script.js"></script>
 
 </body>
 </html>
